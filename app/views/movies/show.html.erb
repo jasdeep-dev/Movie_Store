@@ -3,12 +3,12 @@
 
 		<div class="row" style="background: azure">
 
-			<div class="col-sm-4" style="padding-top: 30px;padding-bottom: 30px;    border: 1px solid #ddd; ">
+			<div class="col-md-4" style="padding-top: 30px;padding-bottom: 30px;    border: 1px solid #ddd; ">
 				<img src="<%= @movie.image_url%>" width=350px, height=408px/>
 			</div>
-			<div class="col-sm-1">
+			<div class="col-md-1">
 			</div>
-			<div class="col-sm-7" style="font-style: oblique;font-family: verdana;">
+			<div class="col-md-7" style="font-style: oblique;font-family: verdana;">
 				<div class="row">
 				<h1 style="font-size: 90px; font-weight: 800"><%= @movie.title %><i style="font-size: 25px">(<%= @movie.year %>)</i>
 					<i style="float: right;font-size: 10px">
@@ -26,8 +26,8 @@
 			</div>
 			
 		</div>
-		<div class="col-sm-6">
-				<div class="col-sm-12" style="border: outset; border-color: #3333; height: 303px;width: 526px;margin-bottom: 29px;border-radius: 14px;background: #333;overflow:auto;">
+		<div class="col-md-6">
+				<div class="col-md-12" style="border: outset; border-color: #3333; height: 303px;width: 526px;margin-bottom: 29px;border-radius: 14px;background: #333;overflow:auto;">
 				<table class="table" style="color: aliceblue;">
 					<thead><tr><th>TOP 10 LIST OF <%= @movie.genre%></th></tr></thead>
 				<tbody>
@@ -52,11 +52,11 @@
 			</div>
 			</div>
 		<div class="row" style="background: azure">
-			<div class="col-sm-6" style="border: outset; border-color: #3333; height: 303px;width: 565px;margin-bottom: 29px;border-radius: 14px;overflow: hidden;">	
+			<div class="col-md-6" style="border: outset; border-color: #3333; height: 303px;width: 565px;margin-bottom: 29px;border-radius: 14px;overflow: hidden;">	
 				
 				<h2>Comments</h2>
 				<% @movie.comments.order('created_at DESC').each do |comment| %>
-				 <div class="col-sm-3">
+				 <div class="col-md-3">
 				   <%=image_tag (comment.user.image_url),width: "94px"%></div>
 				   <div class="row">
 				    <i><b><%=comment.user.email %></b></i>::
@@ -103,13 +103,13 @@
 					<%if user_signed_in? %>
 						<%= form_for([@movie, @movie.comments.build]) do |f| %>
 					 <div class="container" style="    padding-left: 0px; float: ">
-						<div class="col-sm-1"> 		 
+						<div class="col-md-1"> 		 
 					    <%=image_tag (current_user.image_url),width: "94px"%>
 					    </div>
-					    <div class="col-sm-2"><%=f.text_area :review, height: "63px"%>
+					    <div class="col-md-2"><%=f.text_area :review, height: "63px"%>
 					  	</div>
 					 
-					  	<div class="col-sm-2">
+					  	<div class="col-md-2">
 					    <%= f.submit %>
 					 </div>
 					<% end %>

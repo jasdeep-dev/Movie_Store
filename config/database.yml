@@ -48,7 +48,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: appMovie_production
-  username: appMovie
-  password: <%= ENV['APPMOVIE_DATABASE_PASSWORD'] %>
+  production:
+  adapter: postgresql
+  encoding: utf8
+  database: project_production
+  pool: 5
+  username: 
+  password:

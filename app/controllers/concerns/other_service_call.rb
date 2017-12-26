@@ -4,9 +4,8 @@ class OtherServiceCall
  	@title= title.split(' ').join('_')
  	uri = URI("http://www.omdbapi.com/?t=#{@title}&apikey=299ccb30")
  	a= Net::HTTP.get(uri)
- 	debugger
  	b= JSON.parse(a)
- 	debugger
+ 	
  	if b["Response"]== "True"
  		title= b["Title"]
  		year = b["Year"]
@@ -18,9 +17,10 @@ class OtherServiceCall
       	else
         	rating = b["imdbRating"]
       	end
+      	debugger
       	web = b["Website"]
       	cast = b["Actors"]
-      	debugger
+      	
       	
       	return movie_create(title,year,image,genre,plot,rating,web,cast)
 
@@ -42,7 +42,7 @@ class OtherServiceCall
 	    @m.cast = cast
 	    
 	    if @m.save
-	    	debugger
+	    	
 	      return true
 	    else
 	    	
