@@ -53,5 +53,5 @@ production:
   encoding: utf8
   database: project_production
   pool: 5
-  username: 
-  password:
+  username: appmovie
+  password:  <%= ENV['MOVIE-STORE_DATABASE_PASSWORD'] %>
