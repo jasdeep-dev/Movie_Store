@@ -57,7 +57,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-    <<: *default1
+  <<: *default1
   database: project_production
   username: appmovie
-  password:  <%= ENV['APP-MOVIE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['APP-MOVIE_DATABASE_PASSWORD'] %>
