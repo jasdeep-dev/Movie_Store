@@ -9,6 +9,15 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
+
+default: &default1
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  host: localhost
+
 default: &default
   adapter: mysql2
   encoding: utf8
@@ -48,10 +57,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  production:
-  adapter: postgresql
-  encoding: utf8
+    <<: *default1
   database: project_production
-  pool: 5
   username: appmovie
-  password:  <%= ENV['MOVIE-STORE_DATABASE_PASSWORD'] %>
+  password:  <%= ENV['APP-MOVIE_DATABASE_PASSWORD'] %>
