@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require bootstrap-sprockets
+//= require bootstrap/dropdown
 
-$( document ).on('turbolinks:load', function() {
-  $('.dropdown-toggle').dropdown();
-})
