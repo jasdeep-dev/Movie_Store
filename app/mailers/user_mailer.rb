@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
 
-	default from: 'notifications@example.com'
+	default from: "#{ Rails.application.secrets.email}"
 	
 	def welcome_email(user)
     @user = user
