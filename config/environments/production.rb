@@ -66,7 +66,7 @@ Rails.application.configure do
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
-  
+
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -103,5 +103,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: 'movie-store-jas.herokuapp.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'movie-store-jas.herokuapp.com'}
 end
