@@ -18,7 +18,7 @@ Rails.application.configure do
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
   # `config/secrets.yml.key`.
   config.read_encrypted_secrets = true
-   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = true
     config.action_mailer.perform_deliveries = true
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
@@ -30,7 +30,7 @@ Rails.application.configure do
       user_name: Rails.application.secrets.email,
       password: Rails.application.secrets.password
     }
-
+  config.action_mailer.perform_caching = false
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
