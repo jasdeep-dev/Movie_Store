@@ -1,9 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 #main_body{
+    margin-top: 36px;
       text-align: center;
-    margin-left: 700px;
-    width: 326px;
-    height: auto;
+    margin: 0 auto;
+    width: 50%;
+    height: 50%
+    ;
     border: outset;
     }
+.mar
+{
+	margin: auto;
+	    width: 183px;
+
+}
