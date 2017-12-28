@@ -5,9 +5,11 @@ match '/admin/movies' => 'movies#create', via: :post
   devise_for :users
 
     get 'movies/detail' => 'movies#detail',as: :detail_movies
-
-  resources :movies do
-  	
+    root 'movies#index'
+    resources :movies do
   	resources :comments
-end
+  end
+
+
+
 end
