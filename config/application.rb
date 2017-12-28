@@ -19,6 +19,8 @@ module AppMovie
     Devise::UnlocksController.layout "devise"
     Devise::PasswordsController.layout "devise"
   end
+    config.middleware.use Rack::Synctime, Rack::Synctime::DEFAULT_HEADER_NAME, -3600 # server time -1 hour
+    config.time_zone = 'Eastern Time (US & Canada)'
     config.load_defaults 5.1
 
     # Settings in config/environments/* take precedence over those specified here.

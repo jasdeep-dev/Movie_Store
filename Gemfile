@@ -32,6 +32,9 @@ gem 'impressionist'
 gem 'draper'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '>= 3.2'
+gem 'cloudinary'
+gem 'rack-synctime'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: drltpfmh1
+  api_key: '289364527498322'
+  api_secret: 4kJX3DKmHOO6SOnYylNPMbTbSs8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: drltpfmh1
+  api_key: '289364527498322'
+  api_secret: 4kJX3DKmHOO6SOnYylNPMbTbSs8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: drltpfmh1
+  api_key: '289364527498322'
+  api_secret: 4kJX3DKmHOO6SOnYylNPMbTbSs8
+  enhance_image_tag: true
+  static_image_support: false
