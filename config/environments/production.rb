@@ -66,6 +66,7 @@ Rails.application.configure do
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
+  config.reconfirmable= true
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -74,6 +75,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "appMovie_#{Rails.env}"
   config.action_mailer.perform_caching = false
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
