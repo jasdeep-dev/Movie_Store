@@ -1,16 +1,15 @@
 
-	<div class="container" onload="loadImage()", style="border: outset;border-color: #3333;">
+	<div class="container-fluid" onload="loadImage()", style="border: outset;border-color: #3333;background: azure" ">
 
-		<div class="row" style="background: azure">
+		<div class="row">
 
-			<div class="col-md-4" style="padding-top: 30px;padding-bottom: 30px;    border: 1px solid #ddd; ">
-				<img src="<%= @movie.image_url%>" width=350px, height=408px/>
+			<div class="col-md-6" style="padding-top: 30px;padding-bottom: 30px;padding-left: 170px;">
+				<img src="<%= @movie.image_url%>" width=80%, height=408px/>
 			</div>
-			<div class="col-md-1">
-			</div>
-			<div class="col-md-7" style="font-style: oblique;font-family: verdana;">
+			
+			<div class="col-md-6" style="font-style: oblique;font-family: verdana; padding-top: 30px;padding-bottom: 30px; height: 470px;">
 				<div class="row">
-				<h1 style="font-size: 90px; font-weight: 800"><%= @movie.title %><i style="font-size: 25px">(<%= @movie.year %>)</i>
+					<h1 style="font-size: 90px; font-weight: 800"><%= @movie.title %><i style="font-size: 25px">(<%= @movie.year %>)</i>
 					<i style="float: right;font-size: 10px">
 					<%=image_tag "rating.png"%></i></h1>
 				</div>
@@ -26,8 +25,8 @@
 			</div>
 			
 		</div>
-		<div class="col-md-6">
-				<div class="col-md-12" style="border: outset; border-color: #3333; height: 303px;width: 526px;margin-bottom: 29px;border-radius: 14px;background: #333;overflow:auto;">
+		<div class="col-md-6" style="padding-left: 170px;">
+				<div class="col-md-12" style="border: outset; border-color: #3333; height: 303px;    width: 595px;margin-bottom: 29px;border-radius: 14px;background: #333;overflow:auto;">
 				<table class="table" style="color: aliceblue;">
 					<thead><tr><th>TOP 10 LIST OF <%= @movie.genre%></th></tr></thead>
 				<tbody>
@@ -51,8 +50,9 @@
 			</table>
 			</div>
 			</div>
+			<%if @movie.comments.empty? %>
 		<div class="row" style="background: azure">
-			<div class="col-md-6" style="border: outset; border-color: #3333; height: 303px;width: 565px;margin-bottom: 29px;border-radius: 14px;overflow: hidden;">	
+			<div class="col-md-6" style="border: outset; border-color: #3333; height: 303px;width: 595px;margin-bottom: 29px;border-radius: 14px;overflow: hidden;">	
 				
 				<h2>Comments</h2>
 				<% @movie.comments.order('created_at DESC').each do |comment| %>
@@ -64,8 +64,10 @@
 
 				  </div><br>	
 				<% end %>
-			</div>
-			<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="float: right">Browse More</button>
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="float: right">Browse More</button>
+			</div><%else%>
+			<%end%>
+			
 
 			<div class="container">
   			
@@ -113,19 +115,34 @@
 					    <%= f.submit %>
 					 </div>
 					<% end %>
+					<%else%>
+						<%= form_for :come, url: new_user_session_path do |f| %>
+						 <div class="container-fluid" style="    padding-left: 0px; float: ">
+						 	<div class="row" style="padding-left: 170px;">
+								<div class="col-md-1" style="padding-right: 0px;"> 		 
+							    
+							    <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" style="width: 94px">
+							    </div>
+							    <div class="col-md-2" style="padding-left: 0px;width: 255px;height: 87px;padding-right: 0px;">
+							    	 <textarea class="form-control" rows="5" id="comment" style="height: 100%; width: 100%"></textarea>
+							    	 <br>
+							  	</div>
+						 
+							  	<div class="col-md-1">
+							   
+							    <button class="btn btn-primary">You need to sign in first</button>
+							 	</div>
+							 </div>
+						 </div>
+
+						<%end%>
 					<%end%>
-					
 				</div>
-				</div>
+	
+				
+				
 			</div>
 			
 		</div>
 			</div>
 
-
-<script>
-	 window.onload = loadImage() {
-    alert("Image is loaded");
-};
-
-    </script>

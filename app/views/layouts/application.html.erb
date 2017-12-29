@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-   <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-
-
-
     <title>AppMovie</title>
     <%= csrf_meta_tags %>
 
@@ -14,8 +9,8 @@
     <%= Gon::Base.render_data %>
   </head>
 
-  <body style="sbackground: darkgray;">
-    <div class="container">
+  <body style="background: darkgray;">
+    <div class="container-fluid">
           	<p class="notice"><%= notice %></p>
                <p class="alert"><%= alert %></p>
                 <div class= "row">
@@ -63,15 +58,13 @@
                                            <%else%>
                                            Account
                                          <%end%> <span class="caret"></span></button>
-                                         <ul class="dropdown-menu" role="menu" >
+                                         <ul class="dropdown-menu dropdown-menu-right" role="menu" >
                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">
                                                 <% if user_signed_in? %>
                                              <li><%= link_to 'ACCOUNT' , edit_user_registration_path%></li>            
                                            <li><%=link_to 'LOG OUT', destroy_user_session_path, method: :DELETE%></li>
                                            <% else %>
-                       
-
-                                    <li><a href="./users/sign_in">LOGIN</a></li>
+                                           <li><%= link_to 'LOGIN' , new_user_session_path%></li>
                                          <%end%>
                                              </a></li>
                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SETTING</a></li>
@@ -96,10 +89,10 @@
           </div>
       </div>
     <%= yield %>
-    <div class="container">
+    <div class="container-fluid">
 <div class="row" style="background: #333333;">
     <footer id="myFooter">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-4" style="padding-left: 50px;">
                 <h2>MOVIE STORE</h2>
@@ -133,9 +126,9 @@
 </html>
 
 
-<script type="text/javascript" src="js/bootstrap/bootstrap-dropdown.js"></script>
+
 <script>
      $(document).ready(function(){
-        $('.dropdown-toggle').dropdown()
+        $('.dropdown-toggle').dropdown();
     });
 </script>

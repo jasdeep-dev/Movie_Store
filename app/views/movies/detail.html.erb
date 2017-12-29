@@ -1,9 +1,9 @@
-	<div class="container" onload="myFunction()">
+	<div class="container-fluid" onload="myFunction()">
 		<ul class="nav nav-tabs">
     		
-    		<li><button class="button1" id="rate" style="font-size: 26px;width: 377px;">BY RATING</button> </li>
-    		<li><button class="button1" id= "top" style="font-size: 26px;width: 377px;">TOP MOVIES</button> </li>
-    		<li><button class="button1" id= "view" style="font-size: 26px;width: 377px;">VIEWED MOVIES</button> </li>
+    		<li style="width: 33%;"><button class="button1" id="rate" style="font-size: 26px;width: 100%;">BY RATING</button> </li>
+    		<li style="width: 33%;"><button class="button1" id= "top" style="font-size: 26px;width: 100%;">TOP MOVIES</button> </li>
+    		<li style="width: 33%;"><button class="button1" id= "view" style="font-size: 26px;width: 100%">VIEWED MOVIES</button> </li>
 
   		</ul>
   	<div id = "demo">
@@ -22,7 +22,7 @@
 		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
 			
 			
-				<div class="container" style="padding: 30px">
+				<div class="container-fluid" style="padding: 30px">
 					<% @home_page_movie.each do |movie| %>
 
 				  		<div class="col-md-4">
@@ -57,7 +57,7 @@
 		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
 			
 			
-				<div class="container" style="padding: 30px">
+				<div class="container-fluid" style="padding: 30px">
 					<% @new_movies.each do |movie| %>
 
 				  		<div class="col-md-4">
@@ -93,7 +93,7 @@
 		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
 			
 			
-				<div class="container" style="padding: 30px">
+				<div class="container-fluid" style="padding: 30px">
 					<% @top_view.each do |movie| %>
 
 				  		<div class="col-md-4">

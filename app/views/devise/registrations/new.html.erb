@@ -1,20 +1,14 @@
 
 <div><h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+           <%= devise_error_messages! %>
 
 
-<%= image_tag "avatar.png",id: "blah",class: "avatar img-circle", width:"10%", height:"10%" %>
+                  <%= image_tag "avatar.png",id: "blah",class: "avatar img-circle", width:"10%", height:"10%" %>
                   <h6>Upload a  photo...</h6>
-                  
-                    
-                    
-                    
                   <div class="field">
-    
-    <%= f.file_field :image,autofocus: true,id:"imgInp", class: "mar"%>
-  </div>
+                    <%= f.file_field :image,autofocus: true,id:"imgInp", class: "mar"%> </div>
                 
                 </br>
 
@@ -48,7 +42,7 @@
 
 <%= render "devise/shared/links" %>
 
-
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script>
 function readURL(input) {
     if (input.files && input.files[0]) {
