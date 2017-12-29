@@ -51,7 +51,6 @@ before_action :authenticate_admin_user!,only: [:create]
 			@view= ViewTable.update(u.first.id, :counter=> @movie.impressionist_count)
 		end
 		
-		
 		@movie_with_same_genre = Movie.where(:genre => @movie.genre)
 	end
 
