@@ -62,7 +62,13 @@
 				<h2>Comments</h2>
 				<% @movie.comments.order('created_at DESC').each do |comment| %>
 				 <div class="col-md-3">
-				   <%=image_tag (comment.user.image_url),width: "94px"%></div>
+				 	<%if comment.user.image_url.empty? %>
+				 	<img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" style="width: 94px">
+					<%else%>
+					<img src="<%=comment.user.image_url%>" style="width: 94px", onerror="this.src='http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png'";>
+				   
+				   	<%end%>
+				   </div>
 				   <div class="row">
 				    <i><b><%=comment.user.email %></b></i>::
 				    <%= comment.review %>
@@ -111,10 +117,13 @@
 					<%if user_signed_in? %>
 						<%= form_for([@movie, @movie.comments.build]) do |f| %>
 						<div class="container-fluid" style="padding-left: 0px;">
-						<div class="row" style="padding-left: 170px;">	
-						 <div class="col-md-1" style="padding-right: 0px;">							 
+						<div class="row" style="padding-left: 100px;">	
+						 <div class="col-md-1" style="padding-right: 0px;width: 108px;">	
+						 <%if current_user.image_url.empty?%>
+						 <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" style="width: 94px">
+						 <%else%>						 
 					    <%=image_tag (current_user.image_url),width: "94px", height:"89px"%>
-					    </div>
+					    <%end%></div>
 					    <div class="col-md-2" style="padding-left: 0px;width: 255px;height: 87px;padding-right: 0px;">
 							<textarea class="form-control" rows="5" id="comment" style="height: 100%; width: 100%"></textarea>
 							<br>
@@ -127,8 +136,8 @@
 					<%else%>
 						<%= form_for :come, url: new_user_session_path do |f| %>
 						 <div class="container-fluid" style="padding-left: 0px;">
-						 	<div class="row" style="padding-left: 170px;">
-								<div class="col-md-1" style="padding-right: 0px;"> 		 
+						 	<div class="row" style="padding-left: 100px;">
+								<div class="col-md-1" style="padding-right: 0px;width: 108px;"> 		 
 							    
 							    <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" style="width: 94px">
 							    </div>
