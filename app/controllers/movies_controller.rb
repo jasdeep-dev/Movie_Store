@@ -67,6 +67,7 @@ before_action :authenticate_admin_user!,only: [:create]
 		
        
       		@home_page_movie= Movie.where("title like? OR title like? OR title like? OR title like?","#{capital_search}%","#{downcase_search}%","#{upcase_search}%","#{title_search}%").order('rating ASC')
+      		
 
   		else
   			@home_page_movie = Movie.order('rating DESC')

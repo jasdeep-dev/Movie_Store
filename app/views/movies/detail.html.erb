@@ -23,7 +23,11 @@
 			
 			
 				<div class="container-fluid" style="padding: 30px">
-					<% @home_page_movie.each do |movie| %>
+					<%if @home_page_movie.empty?%>
+					<h1><b> NO MATCH FOUND</b></h1>
+					 <%else%>
+					
+					 <% @home_page_movie.each do |movie| %>
 
 				  		<div class="col-md-4">
 				  			<div class="container1" style="padding: 30px; width: 336px;">
@@ -36,6 +40,7 @@
 					  			</div>
 					  		</div>
 					  	</div>
+					 <%end%>
 					 <%end%>
 
 			  	</div>
