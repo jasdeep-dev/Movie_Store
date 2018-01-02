@@ -7,7 +7,7 @@
 				<%if @movie.image_url.empty? %>
 				<img src="https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg" width=100%, height=408px/>
 				<%else%>
-				<img src="<%= @movie.image_url%>" width=100%, height=408px alt="Image not found" onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg';"/>
+				<img src="<%= @movie.image_url%>" width=100%, height=408px alt="Image not found" onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg';" style= "padding-left: 200px;padding-right: 200px;"/>
 				<%end%>
 			</div>
 			
@@ -76,7 +76,7 @@
 
 				  </div><br>	
 				<% end %>
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="float: right">Browse More</button>
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="float: right; background-color: #333; border-color: black">Browse More</button>
 			</div>
 		</div>
 			<%end%>
@@ -131,7 +131,7 @@
 						</div>
 						 <div class="col-md-1"> 
 					  	
-					  		<button class="btn btn-primary">ADD REVIEW</button>
+					  		<button class="btn btn-primary" style="background-color: #333">ADD REVIEW</button>
 					 </div>
 					<% end %>
 					<%else%>
@@ -149,7 +149,7 @@
 						 
 							  	<div class="col-md-1">
 							   
-							    <button class="btn btn-primary">You need to sign in first</button>
+							    <button class="btn btn-primary" style="background-color: #333; border-color: black">You need to sign in first</button>
 							 	</div>
 							 </div>
 						 </div>
