@@ -28,7 +28,7 @@
                       <a href=".">Home</a>
                     </li>
                     <%if current_admin_user%>
-                    <li><a href=./admin/movies>Switch to admin Mode </a></li>
+                    <li><a href=/admin/movies>Switch to admin Mode </a></li>
                     <li><%=link_to 'ADMIN SIGN IN', new_admin_user_session_path%></li>
                       <li><%=link_to 'admin_sign_out', destroy_admin_user_session_path, method: :DELETE%></li>
                     <%end%>
