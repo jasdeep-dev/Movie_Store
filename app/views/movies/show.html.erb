@@ -31,7 +31,7 @@
 		
 		<div class="row">
 		<div class="col-md-6" style="padding: 50px">
-				<div class="col-md-12" style="border: outset; border-color: #3333;height: 300px;margin-bottom: 29px;border-radius: 14px;background: #333;overflow:auto;">
+				<div class="col-md-12" style="border: outset; border-color: #3333;height: 300px;margin-bottom: 29px;background: #333;overflow:auto;">
 				<table class="table" style="color: aliceblue;">
 					<thead><tr><th>TOP 10 LIST OF <%= @movie.genre%></th></tr></thead>
 				<tbody>
@@ -58,7 +58,7 @@
 			<%if @movie.comments.empty? %>
 		<%else%>
 		<div class="col-md-6" style="padding: 50px">
-			<div style="border: outset; border-color: #3333;margin-bottom: 29px; height: 300px;border-radius: 14px;overflow: hidden;">	
+			<div style="border: outset; border-color: #3333;margin-bottom: 29px; height: 300px;overflow: hidden;padding-left: 15px;background: #333;color: aliceblue;">	
 				
 				<h2>Comments</h2>
 				<% @movie.comments.order('created_at DESC').each do |comment| %>
