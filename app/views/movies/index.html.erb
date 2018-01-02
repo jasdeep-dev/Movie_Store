@@ -1,5 +1,5 @@
 
-<div class="container-fluid" >
+<div class="container" >
 	
 	<div class="row">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -12,7 +12,7 @@
 		  </ol>
 
   <!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
+			<div class="carousel-inner" role="listbox" ">
 			    <div class="item active">
 			    	<%= image_tag "Logan1.jpg", width: "100%", height: "700px";%>
 			      		<div class="carousel-caption">
@@ -49,23 +49,26 @@
 		</div>
 
 	</div>
+	<div class="row" style="background-color: black">
+		
+		<div class="col-md-12">
 		<div class="row">
-			<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
-				<div style=" color: #9d9d9d; font-family: serif;font-size: 30px;color: #9d9d9d" >
+			<nav class="navbar navbar-inverse" style="margin-bottom: 0px;text-align: center;">
+				<div style="font-family: serif;font-size: 30px;">
 					
-					<a href=<%=detail_movies_path(view: "rate")%> style="color: antiquewhite;text-decoration: none;font-family: verdana sans-serif;font-weight: 800;"> TOP RATED MOVIE</a>
+					<a href=<%=detail_movies_path(view: "rate")%> style="color: antiquewhite;text-decoration: none;font-family: verdana sans-serif;font-weight: 800; text-align: center"> TOP RATED MOVIE</a>
 				</div>
 
 			</nav>
 			
 		</div>
-		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
+		<div class="row" style=" border: outset; border-color: #3333;" >
 			
 			<div style="border:1px solid black;overflow:auto;height: 410px; border-color: #3333">
-				<div class="container-fluid" style="padding: 30px; margin-left: 56px;">
+				<div class="container" style="padding: 30px; width: 1162px;">
 					<% @home_page_movie.each do |movie| %>
 
-				  		<div class="col-md-3">
+				  		<div class="col-md-4">
 				  			<div class="container1" style="padding: 30px; width: 336px;">
 					  			<img src="<%= movie.image_url	%>" class="image", width: 280px, onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", height: 270px style="height: 270px;width: 280px;"/>
 					  			<div class="overlay">
@@ -85,7 +88,7 @@
 
   		<div class="row">
 			<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
-				<div style=" color: #9d9d9d; font-family: serif;font-size: 30px;color: #9d9d9d" >
+				<div style=" font-family: serif;font-size: 30px;color: #9d9d9d; text-align: center;" >
 					
 					<a href=<%=detail_movies_path(view: "top")%> style="color: antiquewhite;text-decoration: none;font-family: verdana sans-serif;font-weight: 800;">NEW MOVIES</a>
 
@@ -94,13 +97,13 @@
 			</nav>
 			
 		</div>
-		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
+		<div class="row" style="border: outset; border-color: #3333; " >
 			
-			<div style="border:1px solid black;overflow:auto;height: 410px; border-color: #3333">
-				<div class="container-fluid" style="padding: 30px; margin-left: 56px;">
+			<div style="border:1px solid black;overflow:auto;height: 410px;">
+				<div class="container" style="padding: 30px;width: 1162px;">
 					<% @new_movies.each do |movie| %>
 
-				  		<div class="col-md-3">
+				  		<div class="col-md-4">
 				  			<div class="container1" style="padding: 30px; width: 336px;">
 					  			<img src="<%= movie.image_url	%>", onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", class="image", width: 280px, height: 270px style="height: 270px;width: 280px;"/>
 					  			<div class="overlay">
@@ -118,22 +121,22 @@
 
   		<div class="row">
 			<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
-				<div style=" color: #9d9d9d; font-family: serif;font-size: 30px;color: #9d9d9d" >
+				<div style=" font-family: serif;font-size: 30px;color: #9d9d9d ; text-align: center" >
 					
-					<a href=<%=detail_movies_path(view: "view")%> style="color: antiquewhite;text-decoration: none;font-family: verdana sans-serif;font-weight: 800;">TOP VIEWED MOVIES</a>
+					<a href=<%=detail_movies_path(view: "view")%> style="color: antiquewhite;text-decoration: none;font-family: verdana sans-serif;font-weight: 800; ">TOP VIEWED MOVIES</a>
 
 				</div>
 
 			</nav>
 			
 		</div>
-		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
+		<div class="row" style=" border: outset; border-color: #3333; " >
 			
 			<div style="border:1px solid black;overflow:auto;height: 410px; border-color: #3333">
-				<div class="container-fluid" style="padding: 30px;margin-left: 56px;">
+				<div class="container" style="padding: 30px;width: 1162px;">
 					<% @top_view.each do |movie| %>
 
-				  		<div class="col-md-3">
+				  		<div class="col-md-4">
 				  			<div class="container1" style="padding: 30px; width: 336px;">
 					  			<img src="<%= movie.image_url	%>", onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", class="image", width: 280px, height: 270px style="height: 270px;width: 280px;"/>
 					  			<div class="overlay">
@@ -148,7 +151,7 @@
 			  	</div>
 		  	</div>
   		</div>
-
+  	</div>
 
 	</div>
 					

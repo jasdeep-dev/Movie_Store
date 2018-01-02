@@ -1,9 +1,9 @@
 
-	<div class="container-fluid" onload="loadImage()", style="border: outset;border-color: #3333;background: azure" ">
+	<div class="container" onload="loadImage()", style="border: outset;border-color: #3333;background: #bfbdb5" ">
 
 		<div class="row">
 
-			<div class="col-md-6" style="padding: 100px">
+			<div class="col-md-6" style="padding: 50px">
 				<%if @movie.image_url.empty? %>
 				<img src="https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg" width=80%, height=408px/>
 				<%else%>
@@ -11,7 +11,7 @@
 				<%end%>
 			</div>
 			
-			<div class="col-md-6" style="font-style: oblique;font-family: verdana; padding: 100px; height: 470px;">
+			<div class="col-md-6" style="font-style: oblique;font-family: verdana; padding: 50px; height: 470px;">
 				<div class="row">
 					<h1 style="font-size: 59px; font-weight: 800"><%= @movie.title %><i style="font-size: 25px">(<%= @movie.year %>)</i>
 					<i style="float: right;font-size: 10px">
@@ -29,8 +29,9 @@
 			</div>
 			
 		</div>
-		<div class="col-md-6" style="padding: 100px">
-				<div class="col-md-12" style="border: outset; border-color: #3333; height: 303px;    width: 595px;margin-bottom: 29px;border-radius: 14px;background: #333;overflow:auto;">
+		<div class="row">
+		<div class="col-md-6" style="padding: 50px">
+				<div class="col-md-12" style="border: outset; border-color: #3333;height: 300px;margin-bottom: 29px;border-radius: 14px;background: #333;overflow:auto;">
 				<table class="table" style="color: aliceblue;">
 					<thead><tr><th>TOP 10 LIST OF <%= @movie.genre%></th></tr></thead>
 				<tbody>
@@ -56,8 +57,8 @@
 			</div>
 			<%if @movie.comments.empty? %>
 		<%else%>
-		<div class="col-md-6" style="padding: 100px">
-			<div style="border: outset; border-color: #3333; height: 303px;width: 595px;margin-bottom: 29px;border-radius: 14px;overflow: hidden;">	
+		<div class="col-md-6" style="padding: 50px">
+			<div style="border: outset; border-color: #3333;margin-bottom: 29px; height: 300px;border-radius: 14px;overflow: hidden;">	
 				
 				<h2>Comments</h2>
 				<% @movie.comments.order('created_at DESC').each do |comment| %>
@@ -79,7 +80,7 @@
 			</div>
 		</div>
 			<%end%>
-			
+		</div>
 
 			<div class="container">
   			
@@ -116,7 +117,7 @@
 				<div class="form-group">
 					<%if user_signed_in? %>
 						<%= form_for([@movie, @movie.comments.build]) do |f| %>
-						<div class="container-fluid" style="padding-left: 0px;">
+						<div class="container" style="padding-left: 0px;">
 						<div class="row" style="padding-left: 100px;">	
 						 <div class="col-md-1" style="padding-right: 0px;width: 108px;">	
 						 <%if current_user.image_url.empty?%>
@@ -135,8 +136,8 @@
 					<% end %>
 					<%else%>
 						<%= form_for :come, url: new_user_session_path do |f| %>
-						 <div class="container-fluid" style="padding-left: 0px;">
-						 	<div class="row" style="padding-left: 100px;">
+						 <div class="container" style="padding-left: 0px;">
+						 	<div class="row" style="padding-left: 20px;">
 								<div class="col-md-1" style="padding-right: 0px;width: 108px;"> 		 
 							    
 							    <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" style="width: 94px">

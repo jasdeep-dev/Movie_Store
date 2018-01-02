@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 .header{
-    background: #a30c0c;
+    background: black;
     height: 100px;
     padding-top: 9px;
     color: #9d9d9d;
@@ -106,12 +106,12 @@ image {
 }
 
 .text {
-    background-color: #a30c0c;
+    background-color: black;
     color: white;
     font-size: 16px;
     padding: 16px 32px;
     border: outset;
-        border-radius: 10px;
+    border-radius: 10px;
     border-color: #3333;
   }
 
@@ -119,3 +119,7 @@ image {
 {
       background: bottom;
 }
+
+
+
+
