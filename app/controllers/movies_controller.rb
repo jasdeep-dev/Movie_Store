@@ -3,11 +3,11 @@ before_action :authenticate_admin_user!,only: [:create]
 	 impressionist actions: [:show]
 	def index
 	
-	@home_page_movie = Movie.order('rating DESC').limit(3)
+	@home_page_movie = Movie.order('rating DESC').limit(4)
 
-	@new_movies =Movie.order('id DESC').limit(3)
+	@new_movies =Movie.order('id DESC').limit(4)
 
-	@viewed = ViewTable.order('counter DESC').limit(4).ids
+	@viewed = ViewTable.order('counter DESC').limit(5).ids
 
 	@top_view=Movie.where(id: @viewed).index_by(&:id).slice(*@viewed).values
 	end

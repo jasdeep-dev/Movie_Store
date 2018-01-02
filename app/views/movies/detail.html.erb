@@ -22,14 +22,14 @@
 		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
 			
 			
-				<div class="container-fluid" style="padding: 30px">
+				<div class="container-fluid" style="padding: 30px;margin-left: 56px;">
 					<%if @home_page_movie.empty?%>
 					<h1><b> NO MATCH FOUND</b></h1>
 					 <%else%>
 					
 					 <% @home_page_movie.each do |movie| %>
 
-				  		<div class="col-md-4">
+				  		<div class="col-md-3">
 				  			<div class="container1" style="padding: 30px; width: 336px;">
 					  			<img src="<%= movie.image_url%>" onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", class="image", width: 280px, height: 270px style="height: 270px;width: 280px;"/>
 					  			<div class="overlay">
@@ -62,10 +62,10 @@
 		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
 			
 			
-				<div class="container-fluid" style="padding: 30px">
+				<div class="container-fluid" style="padding: 30px;margin-left: 56px;">
 					<% @new_movies.each do |movie| %>
 
-				  		<div class="col-md-4">
+				  		<div class="col-md-3">
 				  			<div class="container1" style="padding: 30px; width: 336px;">
 					  			<img src="<%= movie.image_url	%>" onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", class="image", width: 280px, height: 270px style="height: 270px;width: 280px;"/>
 					  			<div class="overlay">
@@ -98,10 +98,10 @@
 		<div class="row" style="background: #a30c0c; border: outset; border-color: #3333; " >
 			
 			
-				<div class="container-fluid" style="padding: 30px">
+				<div class="container-fluid" style="padding: 30px;margin-left: 56px;">
 					<% @top_view.each do |movie| %>
 
-				  		<div class="col-md-4">
+				  		<div class="col-md-3">
 				  			<div class="container1" style="padding: 30px; width: 336px;">
 					  			<img src="<%= movie.image_url%>" onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", class="image", width: 280px, height: 270px style="height: 270px;width: 280px;"/>
 					  			<div class="overlay">
