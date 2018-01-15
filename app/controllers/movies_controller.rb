@@ -51,7 +51,7 @@ before_action :authenticate_admin_user!,only: [:create]
 			@view= ViewTable.update(u.first.id, :counter=> @movie.impressionist_count)
 		end
 		
-		@movie_with_same_genre = Movie.where(:genre => @movie.genre)
+		@movie_with_same_genre = Movie.where(:genre => @movie.genre).limit(10)
 	end
 
 	def detail
@@ -67,16 +67,17 @@ before_action :authenticate_admin_user!,only: [:create]
        	 upcase_search = search.upcase
        	 title_search = search.titleize
       		@home_page_movie= Movie.where("title like? OR title like? OR title like? OR title like?","#{capital_search}%","#{downcase_search}%","#{upcase_search}%","#{title_search}%").order('rating ASC')
-
+      		@new_movies =Movie.where("title like? OR title like? OR title like? OR title like?","#{capital_search}%","#{downcase_search}%","#{upcase_search}%","#{title_search}%").order('id DESC')
+			
+			@top_view= Movie.where("title like? OR title like? OR title like? OR title like?","#{capital_search}%","#{downcase_search}%","#{upcase_search}%","#{title_search}%").order('id DESC')
 
   		else
   			@home_page_movie = Movie.order('rating DESC')
-      	end
-	
-	@new_movies =Movie.order('id DESC')
-	@viewed = ViewTable.order('counter DESC').collect(&:movie_id)
+      		@new_movies =Movie.order('id DESC')
+			@viewed = ViewTable.order('counter DESC').collect(&:movie_id)
 
-	@top_view=Movie.where(id: @viewed).index_by(&:id).slice(*@viewed).values
+			@top_view=Movie.where(id: @viewed).index_by(&:id).slice(*@viewed).values
+      	end
 	
 	end
 
