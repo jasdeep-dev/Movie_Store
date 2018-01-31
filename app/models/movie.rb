@@ -3,4 +3,5 @@ class Movie < ApplicationRecord
 	is_impressionable
 	has_many :comments
 	has_many :users, through: :comments
+	searchkick
 end

@@ -1,0 +1,97 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title AppMovie
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'detail', 'data-turbolinks-track': true
+    = Gon::Base.render_data
+  %body
+    .container
+      %p.notice= notice
+      %p.alert= alert
+      .row
+        .header{:style => "border-color: #3333;"} MOVIE STORE
+      .row
+        %nav.navbar.navbar-inverse{:style => " margin-bottom: 0px;"}
+          .container
+            .nav_bar
+              .navbar-header
+                %a.navbar-brand{:href => "."} Movie Store
+              %ul.nav.navbar-nav
+                %li.active
+                  %a{:href => "."} Home
+                - if current_admin_user
+                  %li
+                    %a{:href => "/admin/movies"} Switch to admin Mode
+                  %li= link_to 'ADMIN SIGN IN', new_admin_user_session_path
+                  %li= link_to 'admin_sign_out', destroy_admin_user_session_path, method: :DELETE
+                %li
+                  = form_tag detail_movies_path, :method => 'get',class: "navbar-form navbar-left" do
+                    .form-group
+                      = text_field_tag :search, params[:search],class:"form-control",placeholder: "Find Movies"
+                    = submit_tag "Search", :name => nil,class: "btn btn-default"
+              %ul.nav.navbar-nav{:style => "float: right"}
+                %li
+                  %div
+                    .dropdown
+                      %button#menu1.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :style => "background: #101010;\n                                         padding-bottom: 14px;\n                                         border-color: #101010;\n                                         padding-top: 14px;", :type => "button"}
+                        - if current_user
+                          = current_user.email
+                        - elsif current_admin_user
+                          = current_admin_user.email
+                        - else
+                          Account
+                        %span.caret
+                      %ul.dropdown-menu.dropdown-menu-right{:role => "menu"}
+                        %li{:role => "presentation"}
+                          %a{:href => "#", :role => "menuitem", :tabindex => "-1"}
+                            - if user_signed_in?
+                              %li= link_to 'ACCOUNT' , edit_user_registration_path
+                              %li= link_to 'LOG OUT', destroy_user_session_path, method: :DELETE
+                            - else
+                              %li= link_to 'LOGIN' , new_user_session_path
+                        %li{:role => "presentation"}
+                          %a{:href => "#", :role => "menuitem", :tabindex => "-1"} SETTING
+                        %li{:role => "presentation"}
+                          %a{:href => "#", :role => "menuitem", :tabindex => "-1"}
+                            - if user_signed_in?
+                            - else
+                        %li.divider{:role => "presentation"}
+                        %li{:role => "presentation"}
+                          %a{:href => "#", :role => "menuitem", :tabindex => "-1"} About Us
+    = yield
+    .container
+      .row{:style => "background: #333333;"}
+        %footer#myFooter
+          .container
+            .row
+              .col-md-4{:style => "padding-left: 50px;"}
+                %h2 MOVIE STORE
+              .col-md-4{:style => "padding-left: 50px;"}
+                %h5 Get started
+                %ul{:style => "text-decoration: none"}
+                  %li{:style => "text-decoration: none"}
+                    %a{:href => "/"} Home
+                  %li
+                    %a{:href => "./users/sign_up"} Sign up
+                  %li
+                    %a{:href => "#"} Downloads
+              .col-md-3{:style => "padding-left: 50px;padding-top: 28px;"}
+                .social-networks
+                  %a.twitter{:href => "https://twitter.com/niri4", :target => "_blank"}
+                    %i.fa.fa-twitter
+                  %a.facebook{:href => "https://www.facebook.com/niri4", :target => "_blank"}
+                    %i.fa.fa-facebook
+                  %a.google{:href => "https://plus.google.com/116609894960334238811", :target => "_blank"}
+                    %i.fa.fa-google-plus
+                %button.btn.btn-default{:type => "button"} Contact us
+          .footer-copyright
+            %p © 2017 Movie Store
+%html
+  :javascript
+    $(document).ready(function(){
+            $('.dropdown-toggle').dropdown();
+        });

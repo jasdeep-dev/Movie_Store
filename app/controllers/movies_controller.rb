@@ -66,10 +66,9 @@ before_action :authenticate_admin_user!,only: [:create]
        	 downcase_search = search.downcase
        	 upcase_search = search.upcase
        	 title_search = search.titleize
-      		@home_page_movie= Movie.where("title like? OR title like? OR title like? OR title like?","#{capital_search}%","#{downcase_search}%","#{upcase_search}%","#{title_search}%").order('rating ASC')
-      		@new_movies =Movie.where("title like? OR title like? OR title like? OR title like?","#{capital_search}%","#{downcase_search}%","#{upcase_search}%","#{title_search}%").order('id DESC')
-			
-			@top_view= Movie.where("title like? OR title like? OR title like? OR title like?","#{capital_search}%","#{downcase_search}%","#{upcase_search}%","#{title_search}%").order('id DESC')
+      		@home_page_movie= Movie.search(params[:search], fields: [:title , :cast])
+      		@new_movies = Movie.search(params[:search], fields: [:title, :cast])
+			@top_view= Movie.search(params[:search], fields: [:title, :cast])
 
   		else
   			@home_page_movie = Movie.order('rating DESC')

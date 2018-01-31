@@ -1,6 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.nav_bars{font-size: 26px;width: 100%;}
+.padding1{padding: 30px;}
+.margin1{margin-bottom: 0px;}
+.block{border: outset; border-color: #3333;background-color: black }
+.movie_link{
+
+  color: antiquewhite;
+  text-decoration: none;
+  font-family: verdana sans-serif;
+  font-weight: 800;
+}
+.custom_bar
+{ color: #9d9d9d; font-family: serif;font-size: 30px;color: #9d9d9d;}
 .header{
     background: black;
     height: 100px;
@@ -76,11 +89,16 @@ image {
 
 
 .container1 {
+  padding: 30px;
+  width: 336px;
   position: relative;
   width: 50%;
+  width: 339px;
 }
 
 .image {
+    height: 270px;
+    width: 280px;
   display: block;
   border: outset;
   border-color: #3333;

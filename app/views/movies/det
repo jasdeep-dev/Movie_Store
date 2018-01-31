@@ -1,0 +1,124 @@
+	<div class="container" onload="myFunction()">
+		<ul class="nav nav-tabs">
+    		
+    		<li style="width: 33%;"><button class="button1 nav_bars" id="rate" >BY RATING</button> </li>
+    		<li style="width: 33%;"><button class="button1 nav_bars" id= "top" >TOP MOVIES</button> </li>
+    		<li style="width: 33%;"><button class="button1 nav_bars" id= "view">VIEWED MOVIES</button> </li>
+
+  		</ul>
+  	<div id = "demo">
+
+		<div class="row">
+
+
+			<nav class="navbar navbar-inverse margin1">
+				<div class= "custom_bar" >
+					TOP RATED MOVIES
+				</div>
+
+			</nav>
+			
+		</div>
+		<div class="row block" >
+			
+			
+				<div class="container padding1">
+					<%if @home_page_movie.empty?%>
+					<h1><b> NO MATCH FOUND</b></h1>
+					 <%else%>
+					
+					 <% @home_page_movie.each do |movie| %>
+
+				  		<div class="col-md-4">
+				  			<div class="container1">
+					  			<img src="<%= movie.image_url%>" onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", class="image", width: 280px, height: 270px />
+					  			<div class="overlay">
+					    			<div class="text">
+					    				
+					    				<a href=<%=movie_path(movie)%> class= "movie_link"> <%=movie.title%></a>
+					    			</div>
+					  			</div>
+					  		</div>
+					  	</div>
+					 <%end%>
+					 <%end%>
+
+			  	</div>
+		  	
+  		</div>
+  	</div>
+
+  	<div id="demo2">
+  		<div class="row">
+			<nav class="navbar navbar-inverse margin1">
+				
+				<div class= "custom_bar" >
+					NEW MOVIE
+				</div>
+
+			</nav>
+			
+		</div>
+		<div class="row block" >
+			
+			
+				<div class="container padding1">
+					<% @new_movies.each do |movie| %>
+
+				  		<div class="col-md-4">
+				  			<div class="container1">
+					  			<img src="<%= movie.image_url	%>" onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", class="image", width: 280px, height: 270px />
+					  			<div class="overlay">
+					    			<div class="text">
+					    				<a href=<%=movie_path(movie)%> class= "movie_link"> <%=movie.title%></a>
+					    			</div>
+					  			</div>
+					  		</div>
+					  	</div>
+					 <%end%>
+
+			  	</div>
+		  	
+  		</div>
+	</div>
+
+	<div id = "demo3">
+
+		<div class="row">
+
+
+			<nav class="navbar navbar-inverse margin1">
+				<div  class= "custom_bar">
+					TOP VIEWED MOVIES
+				</div>
+
+			</nav>
+			
+		</div>
+		<div class="row block" >
+			
+			
+				<div class="container padding1">
+					<% @top_view.each do |movie| %>
+
+				  		<div class="col-md-4">
+				  			<div class="container1">
+					  			<img src="<%= movie.image_url%>" onerror="this.src='https://www.cityyear.org/sites/default/files/Locations/DC/photo%20not%20available.jpg'", class="image", width: 280px, height: 270px />
+					  			<div class="overlay">
+					    			<div class="text">
+					    				
+					    				<a href=<%=movie_path(movie)%>  class= "movie_link"> <%=movie.title%></a>
+					    			</div>
+					  			</div>
+					  		</div>
+					  	</div>
+					 <%end%>
+
+			  	</div>
+		  	
+  		</div>
+  	</div>
+	
+	
+
+</div>

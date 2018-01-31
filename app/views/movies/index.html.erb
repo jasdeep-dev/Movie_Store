@@ -1,4 +1,4 @@
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <div class="container" >
 	
 	<div class="row">
@@ -62,6 +62,8 @@
 			</nav>
 			
 		</div>
+
+
 		<div class="row" style=" border: outset; border-color: #3333;" >
 			
 			<div style="border:1px solid black;overflow:auto;height: 410px; border-color: #3333">
@@ -85,7 +87,7 @@
 		  	</div>
   		</div>
   		<div class="row"> <h3  style="float: right; color: white"><a href=<%=detail_movies_path(view: "rate")%> style="color: antiquewhite; text-decoration: none;	">Browse more....</a></h3></div>
-
+<div class="row" style="border: outset; border-color: #3333; " >
 
   		<div class="row">
 			<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
@@ -98,7 +100,7 @@
 			</nav>
 			
 		</div>
-		<div class="row" style="border: outset; border-color: #3333; " >
+		
 			
 			<div style="border:1px solid black;overflow:auto;height: 410px;">
 				<div class="container" style="padding: 30px;width: 1162px;">
@@ -163,6 +165,31 @@
 </div>
 
 
-
-
-
+		<canvas id="bar-chart" style="padding-left: 336px; padding-right: 366px;" ></canvas>
+       <script type="text/javascript"> <% names =  Array.new %>
+            <% vii = Array.new %>
+            <% @home_page_movie.each do |m|%>
+            <% names.push(m.title) %>
+            <% vii.push(m.rating) %>
+            <% end %>
+             new Chart(document.getElementById("bar-chart"), {
+                type: 'bar',
+                data: {
+                  labels:<%= names.inspect.html_safe %>,
+                  datasets: [{
+                    label: "Ratings",
+                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#000f"],
+                    data:<%= vii.inspect.html_safe %>
+                  }]
+                },
+                     options: {
+                       scales: {
+                          yAxes: [{
+                             ticks: {
+                        beginAtZero:true
+                                  }
+                               }]
+                            }
+                         }
+                      });
+                  </script>

@@ -14,4 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-
+//= require Chart.min
+//= require index
+//= require detail
