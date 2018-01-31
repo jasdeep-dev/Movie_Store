@@ -37,6 +37,8 @@ gem 'rack-synctime'
 gem 'haml'
 gem 'chart-js-rails'
 gem 'searchkick'
+gem 'elasticsearch', '>= 1.0.15'
+gem 'faraday_middleware-aws-signers-v4', '>= 0.1.9'
 
 
 

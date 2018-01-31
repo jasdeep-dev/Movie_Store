@@ -320,6 +320,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   draper
+  elasticsearch (>= 1.0.15)
   figaro
   gon
   haml
